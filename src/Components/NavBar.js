@@ -9,17 +9,17 @@ function NavigationBar() {
     name: "Dhruv Singh",
     profile_key: ""
   });
-  const { upcomingRides, setsortedRides, nearestRides, lastRides, rides } =
+  const { upcomingRides, setsortedRides, nearestRides, lastRides } =
     RideContextProvoider();
   const [dropDown, setdropDown] = useState(false);
 
   return (
     <>
       <div className="NavBar">
-        <img src={LOGO} />
+        <img src={LOGO} alt='Logo'/>
         <div className="user">
           <p className="username">{user.name}</p>
-          <img src={IMG} className="profilepic" />
+          <img src={IMG} alt='profile' className="profilepic" />
         </div>
       </div>
       <div className="actionbuttons">
@@ -33,7 +33,7 @@ function NavigationBar() {
           </p>
         </div>
         <div className="filter">
-          <img className="filter-logo" src={FILTERLOGO} />
+          <img className="filter-logo" alt="filterlogo" src={FILTERLOGO} />
           <p onClick={() => setdropDown(!dropDown)}>Filter</p>
           <div
             style={dropDown ? { display: "block" } : { display: "none" }}

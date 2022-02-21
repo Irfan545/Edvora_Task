@@ -1,4 +1,3 @@
-import React, { useEffect, useState } from "react";
 import { RideContextProvoider } from "../context";
 import MAP from "../images/image1.png";
 function Rides() {
@@ -11,7 +10,7 @@ function Rides() {
           sortedRides.map((ride) => (
             <div key={ride.id} className="ridebody">
               <div className="rideinfo">
-                <img src={MAP} />
+                <img src={MAP} alt='Map' />
                 <ul>
                   <li>Ride Id: {ride.id}</li>
                   <li>Origin Station: {ride.origin_station_code}</li>

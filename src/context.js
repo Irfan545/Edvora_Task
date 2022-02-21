@@ -6,7 +6,7 @@ export function RideContextProvoider() {
   return useContext(ridesContext);
 }
 function ContextProvoider({ children }) {
-  const [rides, setRides] = useState([
+  const [rides] = useState([
     {
       id: 1,
       origin_station_code: 23,
@@ -88,7 +88,7 @@ function ContextProvoider({ children }) {
 
     sortRides();
     upcomingRides();
-  }, []);
+  }, [rides,num]);
 
   var value = {
     rides,
