@@ -4,12 +4,11 @@ import Rides from "./Components/Rides";
 import ContextProvoider from "./context";
 
 function App() {
-
   return (
     <div className="App">
       <ContextProvoider>
-      <NavigationBar/>
-      <Rides/>
+        <NavigationBar />
+        <Rides />
       </ContextProvoider>
     </div>
   );

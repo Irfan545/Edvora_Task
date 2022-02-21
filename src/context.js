@@ -44,12 +44,12 @@ function ContextProvoider({ children }) {
   const [upcomingRides, setupcomingRides] = useState();
   const [lastRides, setlastRides] = useState();
   const [display, setDisplay] = useState(false);
-  var num = 40;
+
+  var num = 40; //Feel free to use Any other number then this .I have use 40 bcz given figma example was having 40.
 
   useEffect(() => {
     const sortRides = () => {
       for (let i = 0; i < sortedRides.length; i++) {
-        console.log(sortedRides[i].station_path);
         if (Array.isArray(sortedRides[i].station_path)) {
           const closest = sortedRides[i].station_path.reduce((a, b) => {
             return Math.abs(b - num) < Math.abs(a - num) ? b : a;
@@ -57,12 +57,12 @@ function ContextProvoider({ children }) {
           sortedRides[i].closetst_number = closest;
           sortedRides[i].distance = closest - num;
         }
-        console.log(sortedRides[i]);
       }
 
       let nearstRides = sortedRides.sort((a, b) => {
         return a.closetst_number - b.closetst_number;
       });
+
       setsortedRides(nearstRides);
       setnearestRides(nearstRides);
       setDisplay(true);
@@ -72,17 +72,16 @@ function ContextProvoider({ children }) {
       let crrDate = new Date().getTime();
       let upcmg = [];
       let last = [];
-      console.log(crrDate);
+
       for (let i = 0; i < rides.length; i++) {
         let rideDate = new Date(rides[i].date).getTime();
-        console.log(crrDate, rideDate);
         if (crrDate < rideDate * 1000) {
           upcmg.push(rides[i]);
-          console.log(rides[i].date);
         } else {
           last.push(rides[i]);
         }
       }
+
       setupcomingRides(upcmg);
       setlastRides(last);
     };

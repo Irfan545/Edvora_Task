@@ -168,6 +168,8 @@ body::-webkit-scrollbar {
   border-bottom: 2px solid #000;
 }
 
+/* Rides Body Styling */
+
 .rides {
   margin: 0;
   padding: 0 43px;
