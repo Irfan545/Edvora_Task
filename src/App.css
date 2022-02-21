@@ -1,38 +1,237 @@
-.App {
-  text-align: center;
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: #292929;
+}
+body::-webkit-scrollbar {
+  display: none;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
+/* Styling For Nav Bar  */
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.NavBar {
+  width: 100vw;
+  height: 84px;
   display: flex;
-  flex-direction: column;
+  padding-left: 43px;
+  padding-right: 19.72px;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  background: #101010;
 }
 
-.App-link {
-  color: #61dafb;
+.user {
+  display: flex;
+  align-items: center;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.logo {
+  width: 114px;
+  height: 43px;
+}
+
+.username {
+  margin-right: 25px;
+  font-family: Inter;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 24px;
+  color: #ffffff;
+}
+
+.profilepic {
+  width: 44px;
+  height: 44px;
+  object-fit: cover;
+  border-radius: 22px;
+  transform: rotate(-0.36deg);
+}
+
+.actionbuttons {
+  position: relative;
+  width: 100vw;
+  height: 81px;
+  padding-left: 43px;
+  padding-right: 47px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.actionbuttons p {
+  position: relative;
+  display: inline-block;
+  font-family: Inter;
+  font-style: normal;
+  color: #f2f2f2;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 19px;
+  /* color: #D0CBCB; */
+  margin-right: 44px;
+  cursor: pointer;
+  /* text-decoration: underline 2px #fff; */
+}
+
+.actionbuttons p:after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+
+  background-color: #fff;
+  transform-origin: bottom right;
+  transition: transform 0.5s ease-out;
+}
+
+.actionbuttons p:hover:after {
+  transform: scaleX(1);
+  transform: scaleZ(-1);
+  transform-origin: bottom left;
+}
+
+.filter {
+  display: flex;
+  align-items: center;
+}
+
+.filter img {
+  width: 18px;
+  height: 12px;
+  /* cursor: pointer; */
+}
+
+.filter p {
+  font-family: Inter;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 19px;
+  color: #f2f2f2;
+  margin-left: 8px;
+  cursor: pointer;
+}
+.dropdown {
+  position: absolute;
+  z-index: 10;
+  width: 220px;
+  height: 190px;
+  top: 65px;
+  right: 20px;
+  background: #131313;
+  padding: 20px;
+  border-radius: 15px;
+  transition:  300ms ease-in-out;
+}
+.dropdown span {
+  font-family: Inter;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 20px;
+  line-height: 24px;
+  margin-bottom: 12px;
+  color: #a5a5a5;
+}
+
+.dropdown hr {
+  width: 158px;
+  margin-bottom: 20px;
+}
+
+.dropdown select {
+    margin: auto;
+  outline: none;
+  width: 168.45px;
+  height: 37.5px;
+  background: #232323;
+  border-radius: 4.68775px;
+  margin-bottom: 12.5px;
+  line-height: 20px;
+  color: #fff;
+  padding: 8px 12px;
+  cursor: pointer;
+}
+.dropdown option {
+  height: 35px;
+  background-color: #fff;
+  color: #000;
+  cursor: pointer;
+  pointer-events: stroke;
+  border-bottom: 2px solid #000;
+}
+
+.rides {
+  margin: 0;
+  padding: 0 43px;
+}
+
+.ridebody {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+  margin-bottom: 13px;
+  width: 100%;
+  height: 198px;
+  background: #171717;
+  border-radius: 10px;
+  padding-top: 22px;
+  padding-left: 29px;
+  padding-bottom: 28px;
+  padding-right: 20px;
+}
+.rideinfo {
+  display: flex;
+}
+.ridebody img {
+  width: 296px;
+  height: 148px;
+}
+
+.ridebody ul {
+  margin-left: 44px;
+  list-style: none;
+}
+.ridebody li {
+  margin-top: 8px;
+  font-family: Inter;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 22px !important;
+
+  color: #cfcfcf;
+}
+.location {
+  display: flex;
+}
+.locationdiv {
+  display: flex;
+  flex-direction: row;
+  height: 23px;
+  align-items: flex-start;
+  padding: 4px 10px;
+  background: rgba(0, 0, 0, 0.56);
+  border-radius: 16px;
+  margin: 0px 10px;
+}
+
+.locationdiv span {
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+  font-family: Inter;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 15px;
+  color: #ffffff;
 }
